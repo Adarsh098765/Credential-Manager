@@ -39,6 +39,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -119,7 +120,15 @@ fun CredentialScreen(
         modifier = modifier
     ) { paddingValues ->
 
-
+        if (credentialList.isEmpty()) {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                Text(
+                    text = "Add your credentials here",
+                    fontSize = MaterialTheme.typography.titleLarge.fontSize,
+                    textAlign = TextAlign.Center
+                )
+            }
+        } else {
             CredentialListScreen(
                 paddingValues = paddingValues,
                 credentialList,
@@ -131,7 +140,10 @@ fun CredentialScreen(
                     showBottomSheet.value = true
                 },
                 scrollState,
-            )
+
+                )
+        }
+
 
         if (showBottomSheet.value) {
             AddCredentialBottomSheet(
@@ -153,10 +165,11 @@ fun CredentialListScreen(
     credentialList: List<Credential>,
     onDeleteCredential: (Credential) -> Unit, // Callback for deleting a credential
     onEditCredential: (Credential) -> Unit, // Callback for editing a credential
-    scrollState: ScrollState
+    scrollState: ScrollState,
 ) {
     val showBottomSheet = remember { mutableStateOf(false) }
     val selectedCredential = remember { mutableStateOf<Credential?>(null) }
+
     LazyColumn(
         modifier = Modifier
             .padding(5.dp),
@@ -264,8 +277,6 @@ fun DeleteBackground(
         )
     }
 }
-
-
 
 
 @Composable
