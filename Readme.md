@@ -1,8 +1,15 @@
-[url=https://postimg.cc/LJmg3ZY2][img]https://i.postimg.cc/LJmg3ZY2/Screenshot-20240509-101944-Password-Manager.jpg[/img][/url]
 
-[url=https://postimg.cc/v4XgqHf9][img]https://i.postimg.cc/v4XgqHf9/Screenshot-20240509-101952-Password-Manager.jpg[/img][/url]
+# Password Manager App
 
-[url=https://postimg.cc/B868d9Bz][img]https://i.postimg.cc/B868d9Bz/Screenshot-20240509-102003-Password-Manager.jpg[/img][/url]
 
-[url=https://postimg.cc/R3D3msPZ][img]https://i.postimg.cc/R3D3msPZ/Screenshot-20240509-102013-Password-Manager.jpg[/img][/url]
+The main goal of this password manager app is to provide a secure and convenient way to store and manage all your passwords and login credentials. Instead of having to remember countless passwords or reusing the same password across multiple accounts (which is insecure), this app acts as a digital vault where you can safely store and access your passwords with ease.
+
+
+## Screenshots
+
+![Add Credential](https://github.com/Adarsh098765/Credential-Manager/assets/43262684/8bc01903-27b3-4ed9-b38f-230f68576e86)
+![Dashboard](https://github.com/Adarsh098765/Credential-Manager/assets/43262684/8cd4fe3d-af20-42b7-bad4-80f2df6e6239)
+![ShowCredential](https://github.com/Adarsh098765/Credential-Manager/assets/43262684/eed43987-9d8d-45c2-ab55-2f0ccc4aa873)
+![Update](https://github.com/Adarsh098765/Credential-Manager/assets/43262684/2e544400-b036-40ec-b367-8c0c71fd2589)
+
 
