@@ -1,9 +1,23 @@
-# Password Manager App
+# Password Vault: Credential Manager for Android
 
-The main goal of this password manager app is to provide a secure and convenient way to store and
-manage all your passwords and login credentials. Instead of having to remember countless passwords
-or reusing the same password across multiple accounts (which is insecure), this app acts as a
-digital vault where you can safely store and access your passwords with ease.
+![Kotlin](https://img.shields.io/badge/Kotlin-1.9-7F52FF?logo=kotlin&logoColor=white) ![Jetpack](https://img.shields.io/badge/Jetpack-Compose-4285F4?logo=jetpackcompose&logoColor=white) ![Room](https://img.shields.io/badge/Room-database-4479A1?logo=sqlite&logoColor=white) ![Hilt](https://img.shields.io/badge/Hilt-DI-2496ED) ![Android](https://img.shields.io/badge/Android-minSdk%2026-3DDC84?logo=android&logoColor=white)
+
+A password-manager app built with **Jetpack Compose and Clean Architecture**. It stores website credentials in a local Room database behind a **biometric unlock** (`BiometricPrompt`), and includes a password generator and a password-strength meter.
+
+## Architecture
+
+```
+presentation/  CredentialScreen, CredentialDetailBottomSheet, AddCredentialBottomSheet
+               CredentialViewModel (state + events)
+domain/        use cases: GetCredentials, GetCredential, AddCredential, DeleteCredential
+               CredentialRepo (interface)
+data/          CredentialRepoImpl ── CredentialDAO ── CredentialDB (Room)
+util/          BiometricPromptManager, Encryption, ImeListener
+```
+
+**Tech stack:** Kotlin · Jetpack Compose (Material 3) · Room · Hilt · Coroutines & Flow · AndroidX Biometric · MVVM · Clean Architecture
+
+> **Security note:** this is a learning project. Passwords are currently encrypted with AES using an app-embedded key. The planned upgrade is a key generated and held in the **Android Keystore** with **AES-GCM**, unlocked by biometric authentication (`setUserAuthenticationRequired`). Don't store real credentials in it yet.
 
 ## Features
 
@@ -50,5 +64,6 @@ Password Strength Indicator:
 ![Add Credential](https://github.com/Adarsh098765/Credential-Manager/assets/43262684/625fcf80-9159-4c59-9a26-95e86d44001c)
 ![Update Credential](https://github.com/Adarsh098765/Credential-Manager/assets/43262684/b8fd7269-8936-4e4b-a468-8bb72d8dc74d)
 
+---
 
-
+Built by **[Adarsh Thakur](https://adarsh098765.github.io/adarshthakur.github.io/)**, an Android engineer working with Kotlin and Jetpack Compose · [LinkedIn](https://www.linkedin.com/in/adarsh-thakur-b31281171/)
